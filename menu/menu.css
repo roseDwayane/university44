@@ -7,7 +7,8 @@ element
 
 .Menu {
     display: none;
-    position: relative;
+    position: absolute;
+	z-index: 10;
 }
     /* Three basic menu layouts */
     /* This also enforces that menu is a ul, and that
@@ -20,6 +21,7 @@ element
     ul.Menu.-floating {
         display: block;
         position: absolute;
+		z-index: 10;
     }
 
     /* Menu and menu-item layout */
@@ -46,6 +48,7 @@ element
     }
     .Menu li > ul {
         position: absolute;
+		z-index: 10;
         min-width: 100%;
         top: 0px;
         left: 100%;
@@ -106,6 +109,7 @@ element
     /* Menu item icons */
     .Menu *[data-icon]:before {
         position: absolute;
+		z-index: 10;
         left: 0px;
         top: 0px;
         bottom: 0px;
@@ -127,7 +131,7 @@ element
     .Menu li.-hasSubmenu > a:after {
         display: block;
         position: absolute;
-
+		z-index: 10;
         width: 8px;
         height: 8px;
         right: 8px;
