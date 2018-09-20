@@ -8,36 +8,89 @@
         <link rel="icon" href="icon/icon.png" type="image/png">
         <link rel="apple-touch-icon" href="icon/icon.png">
         <link rel="stylesheet" type="text/css" href="fonts/gamefont.css">
+		<!-- These two are all that's required for tidy-menu -->
+		<link rel="stylesheet" type="text/css" href="menu/menu.css"/>
+		<script type="application/javascript" src="menu/menu.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="menu/menu-skin/skin.css"/>
+		<link rel="stylesheet" type="text/css" href="menu/icon/icon.css"/>
+		<link rel="stylesheet" type="text/css" href="menu/main/main.css"/>
         <title>University由你玩四年</title>
     </head>
     <body style="background-color: black">
-		<script type="text/javascript">
-			function ppt(){
-				window.open("https://docs.google.com/presentation/d/1uQk_QG6h41iejzQJMZQmHml6ZRij6zySz1F5PUsRhlM/edit?usp=sharing");//捷克改這裡啦，網址貼這
-			}
-			initial();
-		</script>
-		<div id="containContainer">
-        <div id="container">
-        </div>
-        <table id="buttonTable" cellspacing="2">
-            <tr>
-                <td><button id="sun">sun</button></td>
-                <td><button id="mercury">mercury</button></td>
-                <td><button id="venus">venus</button></td>
-                <td><button id="earth">earth</button></td>
-                <td> <button id="mars">mars</button></td>
-                <td> <button id="jupiter">jupiter</button></td>
-                <td> <button id="saturn">saturn</button></td>
-                <td> <button id="uranus">uranus</button></td>
-                <td><button id="neptune">neptune</button></td>
-                <td><button id="pluto">pluto</button></td>
-                <td></td>
-                <td><input id="speed" value="20" type="text" /></td>
-                <td><button id="updateSpeed">updateSpeed</button></td>
-                <td><button onclick="ppt()">說明文件</button></td>
-            </tr>
-        </table>
+		<div class="Header">
+			<ul class="Menu -horizontal">
+				<li class="-hasSubmenu -noChevron">
+					<a href="#" data-icon="apps"></a>
+					<ul>
+						<li><a href="#">Bacon</a></li>
+						<li><a href="#">Ipsum</a></li>
+						<li><a href="#">Dolor</a></li>
+						<li><a href="#">Amet</a></li>
+					</ul>
+				</li>
+				<li class="-hasSubmenu">
+					<a href="#">Alpha</a>
+					<ul>
+						<li><a href="#">Bacon</a></li>
+						<li><a href="#">Ipsum</a></li>
+						<li class="-hasSubmenu">
+							<a href="#">Sub-menu</a>
+							<ul>
+								<li><a href="#">Bacon</a></li>
+								<li><a href="#">Ipsum</a></li>
+								<li><a href="#">Dolor</a></li>
+								<li><a href="#">Amet</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Dolor</a></li>
+						<li><a href="#">Amet</a></li>
+						<li class="-hasSubmenu">
+							<a href="#">Another Sub-menu</a>
+							<ul>
+								<li><a href="#">Bacon</a></li>
+								<li><a href="#">Ipsum</a></li>
+								<li class="-hasSubmenu">
+									<a href="#">Sub-sub-menu!</a>
+									<ul>
+										<li><a href="#">Bacon</a></li>
+										<li><a href="#">Ipsum</a></li>
+										<li><a href="#">Dolor</a></li>
+										<li><a href="#">Amet</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Dolor</a></li>
+								<li><a href="#">Amet</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><a href="#">人物設定</a></li>
+				<li><a href="#">章節</a></li>
+				<li><a href="#">下載</a></li>
+				<li><a href="https://www.google.com/">說明文件</a></li>
+			</ul>
+			<ul class="Menu -horizontal -alignRight">
+				<li><a class="Icon" href="#">whatshot</a></li>
+				<li><a class="Icon" href="#">mood</a></li>
+				<li><a class="Icon" href="#">cake</a></li>
+				<li class="-hasSubmenu -noChevron">
+					<a href="#" data-icon="person">Joe Bloggs</a>
+					<ul>
+						<li><a href="#">Profile</a></li>
+						<li><span>Logout</span></li>
+						<li class="-hasSubmenu">
+							<a href="#">Sub-menu</a>
+							<ul>
+								<li><a href="#">Bacon</a></li>
+								<li><a href="#">Ipsum</a></li>
+								<li><a href="#">Dolor</a></li>
+								<li><a href="#">Amet</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
 		</div>
         <script type="text/javascript" src="js/libs/pixi.js"></script>
         <script type="text/javascript" src="js/libs/fpsmeter.js"></script>
