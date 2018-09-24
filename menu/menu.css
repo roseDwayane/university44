@@ -7,8 +7,7 @@ element
 
 .Menu {
     display: none;
-    position: absolute;
-	z-index: 100;
+    position: relative;
 }
     /* Three basic menu layouts */
     /* This also enforces that menu is a ul, and that
@@ -16,22 +15,17 @@ element
      */
     ul.Menu.-horizontal,
     ul.Menu.-vertical {
-		position: relative;
-		z-index: 100;
         display: inline-block;
     }
     ul.Menu.-floating {
         display: block;
         position: absolute;
-		z-index: 100;
     }
 
     /* Menu and menu-item layout */
     .Menu,
     .Menu li,
     .Menu li > ul {
-		position: relative;
-		z-index: 100;
         list-style: none;
         padding: 0px;
         margin: 0px;
@@ -39,42 +33,31 @@ element
     .Menu li {
         display: block;
         position: relative;
-		z-index: 100;
         white-space: nowrap;
         word-break: keep-all;
     }
     .Menu.-horizontal > li {
-		position: relative;
-		z-index: 100;
         display: inline-block;
         float: left;
     }
     .Menu li > * {
         display: block;
         position: relative;
-		z-index: 100;
     }
     .Menu li > ul {
         position: absolute;
-		z-index: 100;
         min-width: 100%;
         top: 0px;
         left: 100%;
     }
     .Menu.-horizontal.-alignRight li > ul {
-		position: absolute;
-		z-index: 100;
         left: auto;
         right: 100%;
     }
     .Menu.-horizontal.-alignRight > li > ul {
-		position: absolute;
-		z-index: 100;
         right: 0px;
     }
     .Menu.-horizontal > li > ul {
-		position: absolute;
-		z-index: 100;
         top: auto;
         left: auto;
     }
@@ -82,14 +65,10 @@ element
     /* Menu behaviour */
     .Menu li > ul,
     .Menu.-floating {
-		position: absolute;
-		z-index: 100;
         display: none;
     }
     .Menu li > ul.-visible,
     ul.Menu.-floating.-visible {
-		position: absolute;
-		z-index: 100;
         display: block;
     }
 
@@ -97,22 +76,16 @@ element
     .Menu li > ul,
     .Menu.-horizontal.-alignRight li > ul,
     .Menu.-floating {
-		position: absolute;
-		z-index: 100;
         opacity: 1;
         transform: scale(1) translateY(0px);
         transform-origin: left top;
     }
     .Menu.-alignRight li > ul,
     .Menu.-floating.-alignRight {
-		position: absolute;
-		z-index: 100;
         transform-origin: right top;
     }
     .Menu li > ul.-animating,
     .Menu.-floating.-animating {
-		position: absolute;
-		z-index: 100;
         opacity: 0 !important;
         transform: scale(0.96) translateX(-16px);
     }
@@ -120,26 +93,19 @@ element
         z-index: -1 !important;
     }
     .Menu.-horizontal > li > ul.-animating {
-		position: absolute;
-		z-index: 100;
         transform: scale(0.96) translateY(-16px);
     }
     .Menu.-alignRight li > ul.-animating,
     .Menu.-floating.-alignRight.-animating {
-		position: absolute;
-		z-index: 100;
         transform: scale(0.96) translateX(16px);
     }
     .Menu.-horizontal.-alignRight > li > ul.-animating {
-		position: absolute;
-		z-index: 100;
         transform: scale(0.96) translateY(-16px);
     }
 
     /* Menu item icons */
     .Menu *[data-icon]:before {
         position: absolute;
-		z-index: 100;
         left: 0px;
         top: 0px;
         bottom: 0px;
@@ -147,18 +113,12 @@ element
     }
     .Menu .Icon,
     .Menu *[data-icon]:before {
-		position: absolute;
-		z-index: 100;
         line-height: inherit;
     }
     .Menu .Icon {
-		position: absolute;
-		z-index: 100;
         padding: 0px;
     }
     .Menu *:empty[data-icon] {
-		position: relative;
-		z-index: 100;
         padding-left: 0px !important;
         padding-right: 0px !important;
     }
@@ -167,7 +127,7 @@ element
     .Menu li.-hasSubmenu > a:after {
         display: block;
         position: absolute;
-		z-index: 100;
+
         width: 8px;
         height: 8px;
         right: 8px;
@@ -183,8 +143,6 @@ element
         content: "";
     }
     .Menu.-horizontal > li.-hasSubmenu > a:after {
-		position: absolute;
-		z-index: 100;
         width: 4px;
         height: 4px;
         bottom: 4px;
@@ -196,8 +154,6 @@ element
         border-style: none solid solid none;
     }
     .Menu li.-hasSubmenu.-noChevron > a:after {
-		position: absolute;
-		z-index: 100;
         display: none;
     }
 
@@ -207,27 +163,19 @@ element
     /* Height of navbar, and menu items */
     /* All of these must be of equal value */
     .Menu {
-		position: absolute;
-		z-index: 100;
         line-height: 40px;
     }
     .Menu.-horizontal,
     .Menu li,
     .Menu li > :first-child {
-		position: relative;
-		z-index: 100;
         height: 40px;
     }
     .Menu *[data-icon]:before,
     .Menu .Icon {
-		position: absolute;
-		z-index: 100;
         width: 40px;
         height: 40px;
     }
     .Menu *[data-icon] {
-		position: relative;
-		z-index: 100;
         min-width: 40px;
         min-height: 40px;
         padding-left: 40px;
@@ -235,8 +183,6 @@ element
 
     /* Default font settings for menu */
     .Menu {
-		position: absolute;
-		z-index: 100;
         font-family: Arial, Helvetica, Sans;
         font-size: 16px;
     }
@@ -244,8 +190,6 @@ element
     /* Icon font sizes */
     .Menu *[data-icon]:before,
     .Menu .Icon {
-		position: absolute;
-		z-index: 100;
         font-size: 24px;
     }
     /* For submenus */
@@ -254,8 +198,6 @@ element
     .Menu > li ul *[data-icon]:before,
     .Menu.-floating *[data-icon]:before,
     {
-		position: absolute;
-		z-index: 100;
         font-size: 18px;
     }
 
@@ -263,75 +205,55 @@ element
     /* Foreground */
     .Menu,
     .Menu li.-hasSubmenu > a:after {
-		position: absolute;
-		z-index: 100;
         color: black;
         border-color: black; /* chevron colour */
     }
     /* Background */
     .Menu ul,
     .Menu.-floating {
-		position: absolute;
-		z-index: 100;
         background: white;
     }
 
     /* Padding for each menu item */
     .Menu li > * {
-		position: relative;
-		z-index: 100;
         padding: 0px 12px;
     }
     /* Indent of chevron */
     .Menu li li.-hasSubmenu > a:after,
     .Menu:not(.-horizontal) > li.-hasSubmenu > a:after {
-		position: absolute;
-		z-index: 100;
         right: 12px;
     }
     .Menu li li.-hasSubmenu > a,
     .Menu:not(.-horizontal) > li.-hasSubmenu > a {
-		position: absolute;
-		z-index: 100;
         padding-right: 28px;
     }
 
     /* Minimum width of dropdown menus */
     .Menu.-horizontal li > ul,
     .Menu.-floating {
-		position: absolute;
-		z-index: 100;
         min-width: 200px;
     }
 
     /* Animation speed of dropdown menus */
     .Menu li > ul,
     .Menu.-floating {
-		position: absolute;
-		z-index: 100;
         transition: width 0.1s, height 0.1s, transform 0.1s, opacity 0.1s;
     }
 
     /* Styling of hyperlink text */
     .Menu li > a {
-		position: relative;
-		z-index: 100;
         text-decoration: none;
         color: inherit;
     }
 
     /* Animation speed of :hover shading */
     .Menu li > a:first-child {
-		position: relative;
-		z-index: 100;
         transition: background-color 0.2s;
     }
 
     /* Colour of :hover shading */
     .Menu li:hover > a:first-child,
     .Menu li.-active > a:first-child {
-		position: absolute;
-		z-index: 100;
         background-color: rgba(0,0,0,0.1);
     }
 
