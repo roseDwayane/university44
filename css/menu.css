@@ -114,6 +114,7 @@ input {
   transition: all .3s ease .15s;
   visibility: hidden;
   width: 100%;
+  
 }
 li:hover > .mega-menu {
   opacity: 1;
@@ -125,11 +126,13 @@ li:hover > .mega-menu {
 .nav-column {
   float: left;
   padding: 2.5%;
-  width: 20%;
+  width: 10%;
 }
 .nav-column a {
-  color: #888;
-  display: block;
+  position: relative;
+  float: left;
+  color: #666;
+  display: table;
   font-weight: bold;
   line-height: 1.75;
 }
