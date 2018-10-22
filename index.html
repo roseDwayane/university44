@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=0.25, maximum-scale=1.0">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<style>
 			body {
 				background-color: #ffffff;
@@ -37,6 +37,7 @@
 				color: white;
 				float: down;
 			}
+			
 		</style>
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto">
 		<link rel="stylesheet" href="css/menu.min.css">
@@ -46,9 +47,11 @@
         <link rel="icon" href="icon/icon.png" type="image/png">
         <link rel="apple-touch-icon" href="icon/icon.png">
         <link rel="stylesheet" type="text/css" href="fonts/gamefont.css">
+		<link rel="stylesheet" href="src/css/layui.css">
         <title>University由你玩四年</title>
     </head>
     <body style="background-color: black">
+	
 	<div class="menu-wrapper" role="navigation">
       <ul class="nav" role="menubar">
         <li role="menuitem">
@@ -61,9 +64,9 @@
               
               <ul>
               	
-              	<li role="menuitem"><a href="#">學員篇序章</a></li>
-              	<li role="menuitem"><a href="#">奮鬥之夜</a></li>
-              	<li role="menuitem"><a href="#">學員篇末章</a></li>
+              	<li class="layui-btn demo" role="menuitem"  data-type="test6"><a href="#">學員篇序章</a></li>
+              	<li class="layui-btn demo" role="menuitem"  data-type="test6""><a href="#">奮鬥之夜</a></li>
+              	<li class="layui-btn demo" role="menuitem"  data-type="test6""><a href="#">學員篇末章</a></li>
                 <!--<li role="menuitem"><a href="#">宿舍房間</a></li>
                 <li role="menuitem"><a href="#">宿舍走廊</a></li>
                 <li role="menuitem"><a href="#">廁所</a></li>
@@ -125,6 +128,82 @@
         </li>
       </ul>
     </div>
+		<script src="src/layui.js"></script>
+		<script>
+		layui.use('layer', function(){
+		  var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+		  
+		  //触发事件
+		  var active = {
+			test: function(){
+			  layer.alert('你好么，体验者');
+			}
+			,test2: function(){
+			  layer.confirm('您是如何看待前端开发？', {
+				btn: ['重要','奇葩'] //按钮
+			  }, function(){
+				layer.msg('的确很重要', {icon: 1});
+			  }, function(){
+				layer.msg('也可以这样', {
+				  time: 20000, //20s后自动关闭
+				  btn: ['明白了', '知道了']
+				});
+			  });
+			}
+			,test3: function(){
+			  layer.msg('玩命提示中');
+			}
+			,test4: function(){
+			  layer.tips('Hi，我是一个小提示', this, {tips: 1});
+			}
+			,test5: function(){
+			   layer.open({
+				title:'更新论坛信息',
+				type: 1,
+				skin: 'layui-layer-rim', 
+				area: ['500px', '580px'], 
+				content: $('#test11111')
+			  });
+			}
+			,test6: function(){
+			  layer.open({
+				type: 2
+				,content: 'http://www.cs.ntou.edu.tw/cswp/index.php?name=cs_index'
+				,area: ['375px', '500px']
+				,maxmin: true
+			  });
+			}
+			,test7: function(){
+			  layer.prompt({title: '输入任何口令，并确认', formType: 1}, function(pass, index){
+				layer.close(index);
+				layer.prompt({title: '随便写点啥，并确认', formType: 2}, function(text, index){
+				  layer.close(index);
+				  layer.msg('演示完毕！您的口令：'+ pass +'<br>您最后写下了：'+text);
+				});
+			  });
+			}
+			/*,test8: function(){
+			  layer.tab({
+				area: ['600px', '300px'],
+				tab: [{
+				  title: 'TAB1', 
+				  content: '内容1'
+				}, {
+				  title: 'TAB2', 
+				  content: '内容2'
+				}, {
+				  title: 'TAB3', 
+				  content: '内容3'
+				}]
+			  });
+			}*/
+		  };
+		  $('.demo').on('click', function(){
+			var type = $(this).data('type');
+			active[type] ? active[type].call(this) : '';
+		  });
+		});
+		</script>	
         <script type="text/javascript" src="js/libs/pixi.js"></script>
         <script type="text/javascript" src="js/libs/fpsmeter.js"></script>
         <script type="text/javascript" src="js/libs/lz-string.js"></script>
